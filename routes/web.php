@@ -15,27 +15,20 @@ Route::get('/',         'FrontController@index')->name('front.index');
 Route::get('/words',    'FrontController@words')->name('front.words');
 Route::get('/check',    'FrontController@check')->name('front.check');
 
-Route::group(['prefix' => 'admin' , 'middleware' => ['auth', 'language'] ], function(){
+Route::group(['prefix' => 'dash-board' , 'middleware' => ['auth', 'language'] ], function(){
 
     Route::get('/',  'DashboardController@index')->name('dashboard.index');
 
-    Route::resource('/word_levels',  'WordLevelController');
-    Route::resource('/words',        'WordController');
+    Route::get('/products',                'ProductController@index')->name('products.index');
+    Route::get('/products/create',         'ProductController@create')->name('products.create');
+    Route::get('/products/get_products',   'ProductController@get_products')->name('products.get_products');
+    Route::post('/products/store',         'ProductController@store')->name('products.store');
 
     Route::group(['middleware' => ['role']], function(){
         Route::resource('permissions',    'PermissionController');
         Route::resource('user_roles',     'UserRoleController');
         Route::resource('users',          'UserController');
     
-        Route::get('projects/{id}/fetch_users',       'ProjectController@fetch_users')->name('projects.fetch_users');
-        Route::post('projects/{id}/add_users',        'ProjectController@add_users')->name('projects.add_users');
-        Route::resource('projects',                   'ProjectController')->middleware('project_attendance');
-    
-        Route::post('tasks/{id}/assign',              'TaskController@assign')->name('tasks.assign')->middleware('project_attendance');
-        Route::post('tasks/{id}/comment',             'TaskController@comment')->name('tasks.comment')->middleware('project_attendance');
-        Route::get('tasks/{id}/complete',             'TaskController@complete')->name('tasks.complete');
-        Route::post('tasks/{id}/point',               'TaskController@give_point')->name('tasks.point');
-        Route::resource('tasks',                      'TaskController')->middleware('project_attendance');
     });
 
     Route::get('/read-notification/{id}',         'NotificationController@read')->name('notifications.read')->middleware('auth');

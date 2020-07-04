@@ -1,7 +1,7 @@
 <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo" style="display: flex;justify-content: center;">
                 <a href="#">
-                    <img src="{{ asset('aqua/aquametrics-logo.svg') }}" width="50px" alt="Aquametrics">
+                    <img src="{{ asset('aqua/aquametrics-logo.jpeg') }}" width="200px" alt="Aquametrics">
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -15,10 +15,6 @@
                         </li>
                         @endif -->
 
-                        <li>
-                            <a href="">
-                                <i class="fas fa-user"></i>İstifadəçi profili</a>
-                        </li>
 
                         <li>
                             <a href="">
@@ -26,7 +22,7 @@
                         </li>
 
                         <li>
-                            <a href="">
+                            <a href="{{ route('products.index') }}">
                                 <i class="fas fa-lemon-o"></i>Məhsullarım</a>
                         </li>
 
