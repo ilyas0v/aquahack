@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
 --
--- Host: localhost    Database: task_management_system
+-- Host: localhost    Database: dictionary
 -- ------------------------------------------------------
 -- Server version	5.7.29
 
@@ -16,6 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `ltm_translations`
+--
+
+DROP TABLE IF EXISTS `ltm_translations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ltm_translations` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `status` int(11) NOT NULL DEFAULT '0',
+  `locale` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `group` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `key` text COLLATE utf8mb4_bin NOT NULL,
+  `value` text COLLATE utf8mb4_bin,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ltm_translations`
+--
+
+LOCK TABLES `ltm_translations` WRITE;
+/*!40000 ALTER TABLE `ltm_translations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ltm_translations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -27,7 +56,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +65,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2020_05_25_163055_create_user_roles_table',2),(4,'2020_05_25_163137_create_permissions_table',2),(5,'2020_05_25_163321_create_role_permissions_table',2),(6,'2020_05_25_163956_create_projects_table',2),(7,'2020_05_25_164337_create_project_users_table',2),(8,'2020_05_25_164424_create_tasks_table',2),(9,'2020_05_25_164741_create_task_comments_table',2),(10,'2020_05_25_164857_create_task_assignments_table',2),(11,'2020_06_04_171206_create_notifications_table',3),(12,'2020_06_06_153325_create_task_completes_table',4),(13,'2020_06_06_161833_add_point_and_comment_fields_to_task_completes',5),(14,'2020_06_07_155356_add_image_field_to_users',6);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2020_05_25_163055_create_user_roles_table',2),(4,'2020_05_25_163137_create_permissions_table',2),(5,'2020_05_25_163321_create_role_permissions_table',2),(6,'2020_05_25_163956_create_projects_table',2),(7,'2020_05_25_164337_create_project_users_table',2),(8,'2020_05_25_164424_create_tasks_table',2),(9,'2020_05_25_164741_create_task_comments_table',2),(10,'2020_05_25_164857_create_task_assignments_table',2),(11,'2020_06_04_171206_create_notifications_table',3),(12,'2020_06_06_153325_create_task_completes_table',4),(13,'2020_06_06_161833_add_point_and_comment_fields_to_task_completes',5),(14,'2020_06_07_155356_add_image_field_to_users',6),(15,'2014_04_02_193005_create_translations_table',7),(16,'2020_06_22_163647_create_words_table',8),(17,'2020_06_22_170258_create_word_levels_table',8);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -376,8 +405,63 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Ilyas Ilyasov','ilyas.ilyasov.1@gmail.comm',NULL,'$2y$10$TVhoEWdm7Hp4I0R7UHUeUeT3h5xUg7erqqA4odFfZSdarL08E.8LG',1,NULL,'2020-05-25 12:55:48','2020-06-07 12:05:25','u4x924JQid2ATUHAsusi47UFPSS6u36kLmjDDMbw.jpeg'),(2,'Test user','elvin.hacizade@live.com',NULL,'$2y$10$/OZynuygrYvfznTNDy1VheT5VoCyqay.yYUedID2QyRvz2G2Vxoga',2,'3ASHPctIucmeAbkfNeNY5PpFGYE35sjE592KA2hpowTXhkNgTXgAEg0yRnIo','2020-05-27 12:29:38','2020-06-07 12:12:41','Ej1DSZwwdTlt0g2lFmTqC7nrIfSOte7x3eGwAGTv.jpeg'),(5,'Memmed','ilyas.ilyasov.1@gmail.com',NULL,'$2y$10$56YluXm3B4m1Dj2IiThz.eEfs.17TYYGW54KoJPrHV2qn2H6I3Uum',1,'xkrou8rm3oMHomktvK9izuZctxWtS978cPb61fXUEHzShurvV34MjbNla8BT','2020-05-27 13:24:40','2020-06-02 13:35:30',NULL),(6,'Test test','ilyas@safaroff.az',NULL,'$2y$10$iyQ1R.9NM2hdrYX5JkgJUePAHBeAH5n66S68YKAy6HtqrKh/kLH7y',1,NULL,'2020-05-31 11:54:20','2020-05-31 12:02:52',NULL);
+INSERT INTO `users` VALUES (5,'Ilyas','ilyas.ilyasov.1@gmail.com',NULL,'$2y$10$56YluXm3B4m1Dj2IiThz.eEfs.17TYYGW54KoJPrHV2qn2H6I3Uum',1,'QgcRNVngTLeZdplJuLve2tVOIGiOFopQWE6U7pvPMhGJrD6zaxKsdx7HZnDY','2020-05-27 13:24:40','2020-07-03 15:18:55',NULL),(6,'Test','test@gmail.com',NULL,'$2y$10$1ddLR.htkovy1HuSdhHDJ.kOBBMf0wl1Ftjz1wLAavtL7dfUKjMfi',NULL,'kXx8dZTiVcvArDqXqzHPL2uMUWHyC0iVjYxiuPxOQbd8xKdDgGl6rgPULf67','2020-07-03 15:49:58','2020-07-03 15:49:58',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `word_levels`
+--
+
+DROP TABLE IF EXISTS `word_levels`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `word_levels` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `word_levels`
+--
+
+LOCK TABLES `word_levels` WRITE;
+/*!40000 ALTER TABLE `word_levels` DISABLE KEYS */;
+INSERT INTO `word_levels` VALUES (1,'A1.','2020-06-22 13:08:15','2020-06-22 13:11:23'),(2,'B1','2020-06-22 13:08:32','2020-06-22 13:08:32');
+/*!40000 ALTER TABLE `word_levels` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `words`
+--
+
+DROP TABLE IF EXISTS `words`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `words` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `level_id` int(10) unsigned NOT NULL,
+  `word_az` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `word_de` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `words`
+--
+
+LOCK TABLES `words` WRITE;
+/*!40000 ALTER TABLE `words` DISABLE KEYS */;
+INSERT INTO `words` VALUES (2,1,'dsjfh','jhjhfd',5,'2020-06-22 15:06:54','2020-06-22 15:06:54'),(3,2,'hjh','hjh',5,'2020-06-22 15:07:06','2020-06-22 15:07:06'),(4,1,'aaa','AAA',5,'2020-06-23 14:54:01','2020-06-23 14:54:01'),(5,1,'BBB','bbb',5,'2020-06-23 14:54:10','2020-06-23 14:54:10'),(6,2,'CCC','ccc',5,'2020-06-23 14:54:19','2020-06-23 14:54:19');
+/*!40000 ALTER TABLE `words` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -389,4 +473,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-09 20:26:07
+-- Dump completed on 2020-07-04 12:25:48

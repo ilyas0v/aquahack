@@ -43,7 +43,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
+                                <img src="{{ asset('aqua/aquametrics-logo.svg') }}" alt="Aquametrics">
                             </a>
                         </div>
                         <div class="login-form">
@@ -65,7 +65,7 @@
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
 
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">register</button>
                                 
                             </form>
                         </div>

@@ -43,7 +43,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
+                                <img src="{{ asset('aqua/aquametrics-logo.svg') }}" alt="Aquametrics">
                             </a>
                         </div>
                         <div class="login-form">
@@ -57,12 +57,7 @@
                                     <label>Password</label>
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <a class="au-btn au-btn--block au-btn--blue2" href="{{ route('gmail.login') }}">sign in with gmail</a>
-                                    </div>
-                                </div>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">sign in</button>
                             </form>
                         </div>
                     </div>
