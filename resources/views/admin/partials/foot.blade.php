@@ -19,6 +19,12 @@
     <script src="{{ asset('dashboard/vendor/select2/select2.min.js') }}">
     </script>
 
+
+
+    <!-- full calendar requires moment along jquery which is included above -->
+    <script src="{{ asset('dashboard/vendor/fullcalendar-3.10.0/lib/moment.min.js') }}"></script>
+    <script src="{{ asset('dashboard/vendor/fullcalendar-3.10.0/fullcalendar.js') }}"></script>
+
     <!-- Main JS-->
     <script src="{{ asset('dashboard/js/main.js') }}"></script>
 

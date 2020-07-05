@@ -66,6 +66,8 @@
                                 </div>
 
                                 <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">register</button>
+                                <p style="text-align:center">or</p>
+                                <a href="{{ route('login') }}" class="btn btn-success btn-block mt-3 m-b-20" style="color:#fff;">LOGIN</a>
                                 
                             </form>
                         </div>

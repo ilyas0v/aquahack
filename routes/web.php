@@ -24,6 +24,8 @@ Route::group(['prefix' => 'dash-board' , 'middleware' => ['auth', 'language'] ],
     Route::get('/products/get_products',   'ProductController@get_products')->name('products.get_products');
     Route::post('/products/store',         'ProductController@store')->name('products.store');
 
+    Route::get('/calendar',                'CalendarController@index')->name('calendar.index');
+
     Route::group(['middleware' => ['role']], function(){
         Route::resource('permissions',    'PermissionController');
         Route::resource('user_roles',     'UserRoleController');

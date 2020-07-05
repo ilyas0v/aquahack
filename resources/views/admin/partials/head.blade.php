@@ -30,6 +30,9 @@
     <link href="{{ asset('dashboard/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('dashboard/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
 
+    <!-- FullCalendar -->
+    <link href="{{ asset('dashboard/vendor/fullcalendar-3.10.0/fullcalendar.css') }}" rel='stylesheet' media="all" />
+
     <!-- Main CSS-->
     <link href="{{ asset('dashboard/css/theme.css') }}" rel="stylesheet" media="all">
 

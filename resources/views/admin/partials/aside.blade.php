@@ -1,7 +1,7 @@
 <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo" style="display: flex;justify-content: center;">
                 <a href="#">
-                    <img src="{{ asset('aqua/aquametrics-logo.jpeg') }}" width="200px" alt="Aquametrics">
+                    <img src="{{ asset('aqua/aquametrics-logo-dashboard.jpeg') }}" width="200px" alt="Aquametrics">
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -27,7 +27,7 @@
                         </li>
 
                         <li>
-                            <a href="">
+                            <a href="{{ route('calendar.index') }}">
                                 <i class="fas fa-calendar"></i>Təqvim</a>
                         </li>
 

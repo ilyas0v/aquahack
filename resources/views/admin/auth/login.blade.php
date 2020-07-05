@@ -58,6 +58,8 @@
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">sign in</button>
+                                <p style="text-align:center">or</p>
+                                <a href="{{ route('register') }}" class="btn btn-success btn-block mt-3 m-b-20" style="color:#fff;">REGISTER</a>
                             </form>
                         </div>
                     </div>

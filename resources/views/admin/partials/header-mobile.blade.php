@@ -27,7 +27,7 @@
                             </li>
 
                             <li>
-                                <a href="">
+                                <a href="{{ route('calendar.index') }}">
                                     <i class="fas fa-calendar"></i>Təqvim</a>
                             </li>
 
