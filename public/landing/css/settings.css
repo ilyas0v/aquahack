@@ -21603,7 +21603,7 @@
 }
 
 body {
-  font-family: "Karla", sans-serif;
+  font-family: "Muli", sans-serif;
   font-size: 14px;
   line-height: 1.6;
   color: #1f1f1f;
@@ -21786,7 +21786,7 @@ input[type="number"] {
 
 /* Buttons */
 .btn {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Muli', sans-serif;
   letter-spacing: -1.12px;
   font-weight: 700;
   font-size: 18px;
