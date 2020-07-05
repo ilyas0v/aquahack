@@ -29,7 +29,7 @@
                 <div class="col-sm-3 col-6 col-lg-2 col-xl-2 order-lg-1">
                   <!-- Brand Logo -->
                     <div class="brand-logo">
-                        <a href=""><img src="/aqua/aquametrics-logo.svg" alt="" width="70" /></a>
+                        <a href=""><img src="/aqua/aquametrics-logo-horizontal.png" alt="" width="140" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8 col-lg-2 col-xl-2 d-none d-sm-block order-lg-3">
