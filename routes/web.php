@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/',         'FrontController@index')->name('front.index');
-Route::get('/words',    'FrontController@words')->name('front.words');
-Route::get('/check',    'FrontController@check')->name('front.check');
+Route::get('/',         'FrontController@index')->name('front.index');  
 
 Route::group(['prefix' => 'dash-board' , 'middleware' => ['auth', 'language'] ], function(){
 

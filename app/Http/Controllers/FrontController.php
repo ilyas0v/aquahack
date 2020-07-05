@@ -10,7 +10,7 @@ class FrontController extends Controller
     
     public function index()
     {
-        return redirect()->route('login');
+        return view('index');
     }
 
 }

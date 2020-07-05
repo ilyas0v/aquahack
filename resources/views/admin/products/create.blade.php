@@ -97,11 +97,11 @@
 
                                                 <div class="row form-group pull-right">
                                                     <button type="submit" class="btn btn-primary mr-2">
-                                                    <i class="fa fa-dot-circle-o"></i> Save
+                                                    <i class="fa fa-dot-circle-o"></i> Yadda saxla
                                                     </button>
-                                                    <button type="reset" class="btn btn-danger mr-4">
-                                                        <i class="fa fa-ban"></i> Reset
-                                                    </button>
+                                                    <a href="{{ route('products.index') }}" class="btn btn-danger mr-4">
+                                                        <i class="fa fa-ban"></i> İmtina
+                                                    </a>
                                                 </div>  
                                                 
     
