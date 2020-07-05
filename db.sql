@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
 --
--- Host: localhost    Database: dictionary
+-- Host: localhost    Database: aquametrics
 -- ------------------------------------------------------
 -- Server version	5.7.29
 
@@ -56,7 +56,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2020_05_25_163055_create_user_roles_table',2),(4,'2020_05_25_163137_create_permissions_table',2),(5,'2020_05_25_163321_create_role_permissions_table',2),(6,'2020_05_25_163956_create_projects_table',2),(7,'2020_05_25_164337_create_project_users_table',2),(8,'2020_05_25_164424_create_tasks_table',2),(9,'2020_05_25_164741_create_task_comments_table',2),(10,'2020_05_25_164857_create_task_assignments_table',2),(11,'2020_06_04_171206_create_notifications_table',3),(12,'2020_06_06_153325_create_task_completes_table',4),(13,'2020_06_06_161833_add_point_and_comment_fields_to_task_completes',5),(14,'2020_06_07_155356_add_image_field_to_users',6),(15,'2014_04_02_193005_create_translations_table',7),(16,'2020_06_22_163647_create_words_table',8),(17,'2020_06_22_170258_create_word_levels_table',8);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2020_05_25_163055_create_user_roles_table',2),(4,'2020_05_25_163137_create_permissions_table',2),(5,'2020_05_25_163321_create_role_permissions_table',2),(6,'2020_05_25_163956_create_projects_table',2),(7,'2020_05_25_164337_create_project_users_table',2),(8,'2020_05_25_164424_create_tasks_table',2),(9,'2020_05_25_164741_create_task_comments_table',2),(10,'2020_05_25_164857_create_task_assignments_table',2),(11,'2020_06_04_171206_create_notifications_table',3),(12,'2020_06_06_153325_create_task_completes_table',4),(13,'2020_06_06_161833_add_point_and_comment_fields_to_task_completes',5),(14,'2020_06_07_155356_add_image_field_to_users',6),(15,'2014_04_02_193005_create_translations_table',7),(16,'2020_06_22_163647_create_words_table',8),(17,'2020_06_22_170258_create_word_levels_table',8),(18,'2020_07_04_134322_create_user_products_table',9);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -351,6 +351,37 @@ INSERT INTO `tasks` VALUES (7,'kdfgjk','kjgjdf',NULL,1,NULL,3,'2020-06-04 12:59:
 UNLOCK TABLES;
 
 --
+-- Table structure for table `user_products`
+--
+
+DROP TABLE IF EXISTS `user_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `product_id` int(10) unsigned NOT NULL,
+  `count` int(11) DEFAULT NULL,
+  `start_time` date DEFAULT NULL,
+  `end_time` date DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_products`
+--
+
+LOCK TABLES `user_products` WRITE;
+/*!40000 ALTER TABLE `user_products` DISABLE KEYS */;
+INSERT INTO `user_products` VALUES (1,7,1,3,'2020-07-12','2020-07-31','Baku','2020-07-04 09:52:11','2020-07-04 09:52:11'),(2,5,6,10,'2020-07-05','2020-07-19','Ganja','2020-07-04 14:35:03','2020-07-04 14:35:03'),(3,5,2,3,'2020-07-10','2020-07-15','Baku','2020-07-04 15:19:44','2020-07-04 15:19:44'),(4,5,7,30,'2020-07-01','2020-07-31','Ganja','2020-07-04 15:27:44','2020-07-04 15:27:44'),(5,5,3,20,'2020-07-15','2020-09-15','Baku','2020-07-04 15:51:21','2020-07-04 15:51:21');
+/*!40000 ALTER TABLE `user_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user_roles`
 --
 
@@ -396,7 +427,7 @@ CREATE TABLE `users` (
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,7 +436,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (5,'Ilyas','ilyas.ilyasov.1@gmail.com',NULL,'$2y$10$56YluXm3B4m1Dj2IiThz.eEfs.17TYYGW54KoJPrHV2qn2H6I3Uum',1,'QgcRNVngTLeZdplJuLve2tVOIGiOFopQWE6U7pvPMhGJrD6zaxKsdx7HZnDY','2020-05-27 13:24:40','2020-07-03 15:18:55',NULL),(6,'Test','test@gmail.com',NULL,'$2y$10$1ddLR.htkovy1HuSdhHDJ.kOBBMf0wl1Ftjz1wLAavtL7dfUKjMfi',NULL,'kXx8dZTiVcvArDqXqzHPL2uMUWHyC0iVjYxiuPxOQbd8xKdDgGl6rgPULf67','2020-07-03 15:49:58','2020-07-03 15:49:58',NULL);
+INSERT INTO `users` VALUES (5,'Ilyas','ilyas.ilyasov.1@gmail.com',NULL,'$2y$10$56YluXm3B4m1Dj2IiThz.eEfs.17TYYGW54KoJPrHV2qn2H6I3Uum',1,'JSB7ZuW4zWSvEk91VnI04nUccCcG2GcaXsbCW7p8nlibUE38YGhskHeK1SmO','2020-05-27 13:24:40','2020-07-03 15:18:55',NULL),(6,'Test','test@gmail.com',NULL,'$2y$10$1ddLR.htkovy1HuSdhHDJ.kOBBMf0wl1Ftjz1wLAavtL7dfUKjMfi',NULL,'kXx8dZTiVcvArDqXqzHPL2uMUWHyC0iVjYxiuPxOQbd8xKdDgGl6rgPULf67','2020-07-03 15:49:58','2020-07-03 15:49:58',NULL),(7,'Hesen','hesen@gmail.com',NULL,'$2y$10$r8YFyIrn7VxVCiqDl4VBCu1FURfBTPIbHqQcaHwehrmUGokaPQb52',NULL,NULL,'2020-07-04 04:47:02','2020-07-04 04:47:02',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -473,4 +504,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-04 12:25:48
+-- Dump completed on 2020-07-05 12:52:43
