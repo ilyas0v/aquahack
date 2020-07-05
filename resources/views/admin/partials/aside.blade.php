@@ -16,17 +16,17 @@
                         @endif -->
 
 
-                        <li>
-                            <a href="">
+                        <li class="@if(\Request::route()->getName() == 'dashboard.index') active @endif">
+                            <a href="{{ route('dashboard.index') }}">
                                 <i class="fas fa-home"></i>Əsas səhifə</a>
                         </li>
 
-                        <li>
+                        <li class="@if(\Request::route()->getName() == 'products.index') active @endif">
                             <a href="{{ route('products.index') }}">
                                 <i class="fas fa-lemon-o"></i>Məhsullarım</a>
                         </li>
 
-                        <li>
+                        <li class="@if(\Request::route()->getName() == 'calendar.index') active @endif">
                             <a href="{{ route('calendar.index') }}">
                                 <i class="fas fa-calendar"></i>Təqvim</a>
                         </li>
