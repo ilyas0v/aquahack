@@ -88,19 +88,9 @@
     <div class="row">
       <div class="col-xl-6 col-lg-6 col-md-7 col-12">
         <div class="hero-content">
-          <h1>Learn User Centered Design</h1>
-          <p>Create custom landing pages with Shades that convert more visitors than any website—no coding required.</p>
-          <div class="hero-btn"><a href="{{ route('login') }}" class="btn btn--orange btn--hover-shine">Get Started</a></div>
-          <div class="rating">
-            <div class="icon">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <span class="text">Trused by over 4,332 students</span>
-          </div>
+          <h2>Optimal suvarma sisteminin təyin olunması</h2>
+          <p>Proqram, bitki növünə və əkin sahəsinə əsasən optimal suvarmanı və cari tariflər üzrə sərf olunacaq xərci təyin edir.</p>
+          <div class="hero-btn"><a href="{{ route('login') }}" class="btn btn--orange btn--hover-shine">İndi başla</a></div>
         </div>
       </div>
 
